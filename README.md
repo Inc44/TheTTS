@@ -1,6 +1,6 @@
 # Introduction
 
-This Python script is designed to synthetize speech using state of the art open and closed source tools. It's implemented in a single file to simplify deployment and usage.
+This Python script is designed to synthesize speech using state-of-the-art open and closed-source tools. It's implemented in a single file to simplify deployment and usage.
 
 # Features
 
