@@ -21,16 +21,16 @@ pip install openai TTS
 
 ## Parameters
 
-- `--api` Use this flag to enable API usage (default: disabled)
-- `--text_file_path` The path to the text file input (default: ./input)
-- `--speech_file_dir` The directory where speech files will be saved (default:./result)
-- `--speaker_wav` The default speaker WAV file (default: female.wav)
-- `--language` The language code (default: en)
-- `--codec` The audio codec to use (default: mp3)
+- `--api`: Use this flag to enable API usage (default: disabled).
+- `--text_file_path`: The path to the text file input (default: ./input).
+- `--speech_file_dir`: The directory where speech files will be saved (default:./result).
+- `--speaker_wav`: The default speaker WAV file (default: female.wav).
+- `--language`: The language code (default: en).
+- `--codec`: The audio codec to use (default: mp3).
 
 ## Commands
 
-Execute the script from the command line, providing the required directories and any optional parameters:
+Execute the script from the command line, providing optional parameters if needed:
 
 ```bash
 python -O thetts.py [options]
