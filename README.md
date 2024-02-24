@@ -11,7 +11,6 @@ This Python script is designed to synthesize speech using state-of-the-art open 
 
 ```
 git clone https://github.com/Inc44/TheTTS.git
-cd TheTTS
 conda create --name TheTTS python=3.10.13
 conda activate TheTTS
 pip install openai TTS
@@ -33,6 +32,8 @@ pip install openai TTS
 Execute the script from the command line, providing optional parameters if needed:
 
 ```bash
+conda activate TheTTS
+cd TheTTS
 python -O thetts.py [options]
 ```
 
