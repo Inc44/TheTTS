@@ -3,10 +3,10 @@ import argparse
 
 parser = argparse.ArgumentParser(description="Process some arguments.")
 parser.add_argument(
-    "--api",
-    action="store_true",
-    default=False,
-    help="Use this flag to enable API usage (default: disabled)",
+    "--api_key",
+    type=str,
+    default=None,
+    help="Use this flag to use ClosedAI's API",
 )
 parser.add_argument(
     "--text_file_path",
@@ -40,12 +40,9 @@ with open(args.text_file_path, "r", encoding="utf-8") as file:
 speech_files = []
 for i, portion in enumerate(text.split("\n\n"), start=1):
     speech_file_path = args.speech_file_dir / f"{i}.{args.codec}"
-    if args.api:
+    if args.api_key:
         from openai import OpenAI
-
-        with open("key", "r", encoding="utf-8") as f:
-            api_key = f.read().strip()
-        openai = OpenAI(api_key=api_key)
+        openai = OpenAI(api_key=args.api_key)
         with openai.audio.speech.with_streaming_response.create(
             model="tts-1", voice="alloy", input=portion
         ) as response:

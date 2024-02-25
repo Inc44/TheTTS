@@ -27,7 +27,7 @@ cp /home/pc/TheTTS/xtts.py /home/pc/miniconda3/envs/TheTTS/lib/python3.10/site-p
 
 ## Parameters
 
-- `--api`: Use this flag to enable API usage (default: disabled).
+- `--api_key`: Use this flag to use ClosedAI's API.
 - `--text_file_path`: The path to the text file input (default: ./input).
 - `--speech_file_dir`: The directory where speech files will be saved (default:./result).
 - `--speaker_wav`: The default speaker WAV file (default: female.wav).
