@@ -11,9 +11,15 @@ This Python script is designed to synthesize speech using state-of-the-art open 
 
 ```
 git clone https://github.com/Inc44/TheTTS.git
+cd TheTTS
 conda create --name TheTTS python=3.10.13
 conda activate TheTTS
+DS_BUILD_TRANSFORMER_INFERENCE=1 pip install deepspeed
 pip install openai TTS
+sudo apt install git-lfs
+git lfs install
+git clone https://huggingface.co/coqui/XTTS-v2
+cp /home/pc/TheTTS/xtts.py /home/pc/miniconda3/envs/TheTTS/lib/python3.10/site-packages/TTS/tts/models
 ```
 
 # Usage

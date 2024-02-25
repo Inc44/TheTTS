@@ -4,7 +4,7 @@ import argparse
 parser = argparse.ArgumentParser(description="Process some arguments.")
 parser.add_argument(
     "--api",
-    action='store_true',
+    action="store_true",
     default=False,
     help="Use this flag to enable API usage (default: disabled)",
 )
@@ -23,8 +23,8 @@ parser.add_argument(
 parser.add_argument(
     "--speaker_wav",
     type=str,
-    default="female.wav",
-    help="The default speaker WAV file (default: female.wav)",
+    default="/home/pc/TheTTS/XTTS-v2/samples/en_sample.wav",
+    help="The default speaker WAV file (default: en_sample.wav)",
 )
 parser.add_argument(
     "--language", type=str, default="en", help="The language code (default: en)"
@@ -55,7 +55,11 @@ for i, portion in enumerate(text.split("\n\n"), start=1):
         from TTS.api import TTS
 
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to(device)
+        tts = TTS(
+            model_path="/home/pc/TheTTS/XTTS-v2",
+            config_path="/home/pc/TheTTS/XTTS-v2/config.json",
+            progress_bar=True,
+        ).to(device)
         tts.tts_to_file(
             text=portion,
             speaker_wav=args.speaker_wav,
