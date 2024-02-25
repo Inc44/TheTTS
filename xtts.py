@@ -736,7 +736,7 @@ class Xtts(BaseTTS):
         vocab_path=None,
         eval=True,
         strict=True,
-        use_deepspeed=False,
+        use_deepspeed=True,
         speaker_file_path=None,
     ):
         """
